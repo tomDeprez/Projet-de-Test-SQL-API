@@ -1,5 +1,4 @@
-# Projet de Test SQL API
-## Partie 1 du projet
+# Partie 1 du projet
 Installation de la base de données et exercices SQL
 
 ## Instructions d'installation
@@ -48,7 +47,7 @@ Afficher la somme des soldes disponibles des comptes ouverts par l'employée Pau
 
 
 
-## Partie 2 du projet
+# Partie 2 du projet
 
 Dans cette deuxième partie du projet, votre tâche consistera à créer des cas de test fonctionnels pour l'API et à les exécuter à l'aide de l'outil Postman. Voici un aperçu de ce que vous devez accomplir dans cette étape :
 
