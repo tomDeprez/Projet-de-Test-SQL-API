@@ -49,9 +49,17 @@ Afficher la somme des soldes disponibles des comptes ouverts par l'employée Pau
 
 
 ## Partie 2 du projet
-## Vous devrez créer des cas de test fonctionnels pour l'API en utilisant Postman.
+
+Dans cette deuxième partie du projet, votre tâche consistera à créer des cas de test fonctionnels pour l'API et à les exécuter à l'aide de l'outil Postman. Voici un aperçu de ce que vous devez accomplir dans cette étape :
 
 ### Étape 1 : 
-Réalisez vos cas de test.
+Réalisez vos cas de test
+Dans cette étape, vous devrez concevoir et créer des scénarios de test qui couvrent différents aspects et fonctionnalités de l'API que vous souhaitez évaluer. Assurez-vous de prendre en compte les différents cas d'utilisation, les entrées possibles et les conditions de réussite pour chaque cas de test. Documentez soigneusement vos cas de test, y compris les étapes à suivre, les données d'entrée nécessaires et les attentes de sortie. Cette étape est essentielle pour garantir une évaluation complète de l'API.
+
 ### Étape 2 : 
-Utilisez Postman pour tester l'API.
+Utilisez Postman pour tester l'API
+Après avoir créé vos cas de test, vous utiliserez l'outil Postman pour exécuter ces scénarios sur l'API. Postman vous permettra d'envoyer des requêtes HTTP aux points d'extrémité de l'API, de fournir les données d'entrée nécessaires et de vérifier les réponses de l'API par rapport à vos attentes. Assurez-vous de noter les résultats de chaque test, enregistrant les succès et les échecs, ainsi que toute anomalie ou problème rencontré.
+
+L'objectif de cette étape est d'identifier les éventuels problèmes, erreurs ou anomalies dans l'API, et de s'assurer que toutes les fonctionnalités sont correctement implémentées et fonctionnent comme prévu.
+
+En résumé, dans la partie 2 du projet, vous serez chargé de créer des cas de test exhaustifs pour l'API et de les exécuter à l'aide de Postman pour évaluer sa qualité et sa conformité aux spécifications.
