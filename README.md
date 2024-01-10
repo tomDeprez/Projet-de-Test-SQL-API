@@ -212,6 +212,71 @@ curl -X PUT http://votresite.com/api/employee_manager.php \
 
 bash
 Copy code
+
+## Documentation de l'API de Gestion des Clients
+### URL de Base
+http://votresite.com/api/customer_manager.php.
+
+Endpoints et Méthodes HTTP
+Création d'un Client (Create)
+
+## Méthode HTTP : POST
+Endpoint : /api/customer_manager.php
+Body (JSON) :
+json
+Copy code
+{
+  "address": "Adresse",
+  "city": "Ville",
+  "cust_type_cd": "Type",
+  "fed_id": "ID Fédéral",
+  "postal_code": "Code Postal",
+  "state": "État"
+}
+Lecture des Clients (Read)
+
+## Méthode HTTP : GET
+Endpoint : /api/customer_manager.php
+Mise à Jour d'un Client (Update)
+
+## Méthode HTTP : PUT
+Endpoint : /api/customer_manager.php
+Body (JSON) : Fonctionnalité non implémentée dans le script
+Suppression d'un Client (Delete)
+
+## Méthode HTTP : DELETE
+Endpoint : /api/customer_manager.php
+Body (JSON) :
+json
+Copy code
+{
+  "cust_id": 123
+}
+Format de Réponse
+Succès : L'API retourne un message de succès pour l'opération effectuée.
+Erreur : En cas d'erreur, l'API renvoie un message d'erreur détaillé.
+Exemples d'Utilisation
+Pour créer un client :
+
+bash
+Copy code
+curl -X POST http://votresite.com/api/customer_manager.php \
+-H "Content-Type: application/json" \
+-d '{"address": "123 Main St", "city": "Anytown", "cust_type_cd": "I", "fed_id": "123456789", "postal_code": "12345", "state": "State"}'
+Pour lire les clients :
+
+bash
+Copy code
+curl -X GET http://votresite.com/api/customer_manager.php
+Pour mettre à jour un client : Fonctionnalité non implémentée dans le script
+
+Pour supprimer un client :
+
+bash
+Copy code
+curl -X DELETE http://votresite.com/api/customer_manager.php \
+-H "Content-Type: application/json" \
+-d '{"cust_id": 123}'
 curl -X DELETE http://votresite.com/api/employee_manager.php \
 -H "Content-Type: application/json" \
 -d '{"emp_id": 123}'
