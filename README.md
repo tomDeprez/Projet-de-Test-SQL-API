@@ -63,3 +63,70 @@ Après avoir créé vos cas de test, vous utiliserez l'outil Postman pour exécu
 L'objectif de cette étape est d'identifier les éventuels problèmes, erreurs ou anomalies dans l'API, et de s'assurer que toutes les fonctionnalités sont correctement implémentées et fonctionnent comme prévu.
 
 En résumé, dans la partie 2 du projet, vous serez chargé de créer des cas de test exhaustifs pour l'API et de les exécuter à l'aide de Postman pour évaluer sa qualité et sa conformité aux spécifications.
+
+# documentation :
+
+## Documentation de l'API de Gestion des Produits
+Base URL
+L'URL de base de l'API est l'adresse où votre script PHP est hébergé, par exemple : http://votresite.com/api/product_manager.php.
+
+Méthodes HTTP et Endpoints
+Création d'un Produit (Create)
+
+## Méthode HTTP : POST
+Endpoint : /api/product_manager.php
+Body (application/x-www-form-urlencoded) :
+product_cd (String) : Code du produit
+name (String) : Nom du produit
+product_type_cd (String) : Type de produit
+date_offered (Date, format YYYY-MM-DD) : Date d'offre du produit
+Lecture des Produits (Read)
+
+## Méthode HTTP : GET
+Endpoint : /api/product_manager.php
+Mise à Jour d'un Produit (Update)
+
+## Méthode HTTP : PUT
+Endpoint : /api/product_manager.php
+Body (application/x-www-form-urlencoded) :
+product_cd (String) : Code du produit à mettre à jour
+name (String) : Nouveau nom du produit
+Suppression d'un Produit (Delete)
+
+## Méthode HTTP : DELETE
+Endpoint : /api/product_manager.php
+Body (application/x-www-form-urlencoded) :
+product_cd (String) : Code du produit à supprimer
+Réponses de l'API
+Succès : L'API retournera un message de succès pour l'opération effectuée, par exemple, "Nouveau produit créé avec succès" pour une création réussie.
+Erreur : En cas d'erreur, l'API renverra un message d'erreur détaillé.
+Exemples d'Utilisation
+
+## Pour créer un produit :
+
+bash
+Copy code
+curl -X POST http://votresite.com/api/product_manager.php \
+-d "product_cd=PRD001&name=Produit+1&product_type_cd=Type1&date_offered=2022-01-01"
+
+## Pour lire les produits :
+
+bash
+Copy code
+curl -X GET http://votresite.com/api/product_manager.php
+
+## Pour mettre à jour un produit :
+
+bash
+Copy code
+curl -X PUT http://votresite.com/api/product_manager.php \
+-d "product_cd=PRD001&name=Nouveau+Nom+Produit"
+
+## Pour supprimer un produit :
+
+bash
+Copy code
+curl -X DELETE http://votresite.com/api/product_manager.php \
+-d "product_cd=PRD001"
+Sécurité
+Cette API ne comprend pas de mécanismes d'authentification ou de validation avancée. Il est fortement recommandé d'ajouter des couches de sécurité supplémentaires pour une utilisation en production.
