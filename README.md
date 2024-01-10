@@ -45,3 +45,13 @@ Afficher tous les comptes en lien avec des prêts pour les petites entreprises.
 
 ### 13 Somme des soldes des comptes ouverts par Paula Roberts
 Afficher la somme des soldes disponibles des comptes ouverts par l'employée Paula Roberts.
+
+
+
+## Partie 2 du projet
+## Vous devrez créer des cas de test fonctionnels pour l'API en utilisant Postman.
+
+### Étape 1 : 
+Réalisez vos cas de test.
+### Étape 2 : 
+Utilisez Postman pour tester l'API.
