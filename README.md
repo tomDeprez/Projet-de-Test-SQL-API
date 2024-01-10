@@ -130,3 +130,91 @@ curl -X DELETE http://votresite.com/api/product_manager.php \
 -d "product_cd=PRD001"
 Sécurité
 Cette API ne comprend pas de mécanismes d'authentification ou de validation avancée. Il est fortement recommandé d'ajouter des couches de sécurité supplémentaires pour une utilisation en production.
+
+
+## Documentation de l'API de Gestion des Employés
+
+### URL de Base :
+http://votresite.com/api/employee_manager.php.
+
+Endpoints et Méthodes HTTP
+Création d'un Employé (Create)
+
+## Méthode HTTP : POST
+Endpoint : /api/employee_manager.php
+Body (JSON) :
+json
+Copy code
+{
+  "first_name": "Prénom",
+  "last_name": "Nom",
+  "start_date": "YYYY-MM-DD",
+  "end_date": "YYYY-MM-DD",
+  "title": "Titre",
+  "assigned_branch_id": 123,
+  "dept_id": 123,
+  "superior_emp_id": 123
+}
+Lecture des Employés (Read)
+
+## Méthode HTTP : GET
+Endpoint : /api/employee_manager.php
+Mise à Jour d'un Employé (Update)
+
+## Méthode HTTP : PUT
+Endpoint : /api/employee_manager.php
+Body (JSON) :
+json
+Copy code
+{
+  "emp_id": 123,
+  "first_name": "Nouveau Prénom",
+  "last_name": "Nouveau Nom"
+  // Ajouter d'autres champs si nécessaire
+}
+Suppression d'un Employé (Delete)
+
+## Méthode HTTP : DELETE
+Endpoint : /api/employee_manager.php
+Body (JSON) :
+json
+Copy code
+{
+  "emp_id": 123
+}
+Format de Réponse
+Succès : L'API retourne un message de succès pour l'opération effectuée, par exemple, "Nouvel employé créé avec succès" pour une création réussie.
+Erreur : En cas d'erreur, l'API renvoie un message d'erreur détaillé.
+Exemples d'Utilisation
+
+## Pour créer un employé :
+
+bash
+Copy code
+curl -X POST http://votresite.com/api/employee_manager.php \
+-H "Content-Type: application/json" \
+-d '{"first_name": "John", "last_name": "Doe", "start_date": "2023-01-01", "end_date": "2023-12-31", "title": "Manager", "assigned_branch_id": 1, "dept_id": 2, "superior_emp_id": 3}'
+
+## Pour lire les employés :
+
+bash
+Copy code
+curl -X GET http://votresite.com/api/employee_manager.php
+
+## Pour mettre à jour un employé :
+
+bash
+Copy code
+curl -X PUT http://votresite.com/api/employee_manager.php \
+-H "Content-Type: application/json" \
+-d '{"emp_id": 123, "first_name": "Jane", "last_name": "Smith"}'
+
+## Pour supprimer un employé :
+
+bash
+Copy code
+curl -X DELETE http://votresite.com/api/employee_manager.php \
+-H "Content-Type: application/json" \
+-d '{"emp_id": 123}'
+Sécurité
+Il est fortement recommandé d'ajouter des mesures de sécurité telles que l'authentification et la validation des données pour les requêtes entrantes, surtout en production.
