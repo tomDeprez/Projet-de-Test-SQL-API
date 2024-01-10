@@ -103,28 +103,20 @@ Exemples d'Utilisation
 
 ## Pour créer un produit :
 
-bash
-Copy code
 curl -X POST http://votresite.com/api/product_manager.php \
 -d "product_cd=PRD001&name=Produit+1&product_type_cd=Type1&date_offered=2022-01-01"
 
 ## Pour lire les produits :
 
-bash
-Copy code
 curl -X GET http://votresite.com/api/product_manager.php
 
 ## Pour mettre à jour un produit :
 
-bash
-Copy code
 curl -X PUT http://votresite.com/api/product_manager.php \
 -d "product_cd=PRD001&name=Nouveau+Nom+Produit"
 
 ## Pour supprimer un produit :
 
-bash
-Copy code
 curl -X DELETE http://votresite.com/api/product_manager.php \
 -d "product_cd=PRD001"
 Sécurité
@@ -188,30 +180,26 @@ Exemples d'Utilisation
 
 ## Pour créer un employé :
 
-bash
-Copy code
 curl -X POST http://votresite.com/api/employee_manager.php \
 -H "Content-Type: application/json" \
 -d '{"first_name": "John", "last_name": "Doe", "start_date": "2023-01-01", "end_date": "2023-12-31", "title": "Manager", "assigned_branch_id": 1, "dept_id": 2, "superior_emp_id": 3}'
 
 ## Pour lire les employés :
 
-bash
-Copy code
 curl -X GET http://votresite.com/api/employee_manager.php
 
 ## Pour mettre à jour un employé :
 
-bash
-Copy code
 curl -X PUT http://votresite.com/api/employee_manager.php \
 -H "Content-Type: application/json" \
 -d '{"emp_id": 123, "first_name": "Jane", "last_name": "Smith"}'
 
 ## Pour supprimer un employé :
 
-bash
-Copy code
+curl -X DELETE http://votresite.com/api/employee_manager.php \
+-H "Content-Type: application/json" \
+-d '{"emp_id": 123}'
+
 
 ## Documentation de l'API de Gestion des Clients
 ### URL de Base
@@ -256,29 +244,24 @@ Format de Réponse
 Succès : L'API retourne un message de succès pour l'opération effectuée.
 Erreur : En cas d'erreur, l'API renvoie un message d'erreur détaillé.
 Exemples d'Utilisation
-Pour créer un client :
 
-bash
-Copy code
+## Pour créer un client :
+
 curl -X POST http://votresite.com/api/customer_manager.php \
 -H "Content-Type: application/json" \
 -d '{"address": "123 Main St", "city": "Anytown", "cust_type_cd": "I", "fed_id": "123456789", "postal_code": "12345", "state": "State"}'
-Pour lire les clients :
 
-bash
-Copy code
+## Pour lire les clients :
+
 curl -X GET http://votresite.com/api/customer_manager.php
 Pour mettre à jour un client : Fonctionnalité non implémentée dans le script
 
-Pour supprimer un client :
+## Pour supprimer un client :
 
-bash
-Copy code
 curl -X DELETE http://votresite.com/api/customer_manager.php \
 -H "Content-Type: application/json" \
 -d '{"cust_id": 123}'
 curl -X DELETE http://votresite.com/api/employee_manager.php \
 -H "Content-Type: application/json" \
 -d '{"emp_id": 123}'
-Sécurité
-Il est fortement recommandé d'ajouter des mesures de sécurité telles que l'authentification et la validation des données pour les requêtes entrantes, surtout en production.
+
