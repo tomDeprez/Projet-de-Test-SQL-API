@@ -45,7 +45,11 @@ Afficher tous les comptes en lien avec des prêts pour les petites entreprises.
 ### 13 Somme des soldes des comptes ouverts par Paula Roberts
 Afficher la somme des soldes disponibles des comptes ouverts par l'employée Paula Roberts.
 
+### 14 Transactions cumulatives par compte
+Calculer le montant total des transactions (crédits et débits) pour chaque compte sur une période donnée.
 
+### 15 Clients avec plusieurs types de comptes
+Trouver les clients qui ont à la fois un compte courant et un compte d'épargne.
 
 # Partie 2 du projet
 
