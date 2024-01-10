@@ -49,6 +49,8 @@ Afficher la somme des soldes disponibles des comptes ouverts par l'employée Pau
 
 # Partie 2 du projet
 
+## ⚠️ Attention, des erreurs ont été volontairement ajoutées. À vous de les trouver. 
+
 Dans cette deuxième partie du projet, votre tâche consistera à créer des cas de test fonctionnels pour l'API et à les exécuter à l'aide de l'outil Postman. Voici un aperçu de ce que vous devez accomplir dans cette étape :
 
 ### Étape 1 : 
