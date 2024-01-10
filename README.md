@@ -1,11 +1,11 @@
-#Projet de Test SQL API
-##Partie 1 du projet
+# Projet de Test SQL API
+## Partie 1 du projet
 Installation de la base de données et exercices SQL
 
-##Instructions d'installation
-###Installer la base de données en utilisant le fichier script.sql.
-##Exercices SQL
-###Une fois la base de données installée, réalisez les exercices suivants :
+## Instructions d'installation
+### Installer la base de données en utilisant le fichier script.sql.
+## Exercices SQL
+### Une fois la base de données installée, réalisez les exercices suivants :
 
 Sélectionner toutes les informations des comptes
 Sélectionner toutes les colonnes du compte ayant l'ID 3.
