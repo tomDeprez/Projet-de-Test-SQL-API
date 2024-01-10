@@ -7,41 +7,41 @@ Installation de la base de données et exercices SQL
 ## Exercices SQL
 ### Une fois la base de données installée, réalisez les exercices suivants :
 
-Sélectionner toutes les informations des comptes
+### 1 Sélectionner toutes les informations des comptes
 Sélectionner toutes les colonnes du compte ayant l'ID 3.
 
-Comptes avec solde inférieur à 600
+### 2 Comptes avec solde inférieur à 600
 Sélectionner toutes les colonnes des comptes avec un solde disponible strictement inférieur à 600.
 
-Comptes d'épargne avec solde inférieur à 600
+### 3 Comptes d'épargne avec solde inférieur à 600
 Sélectionner toutes les colonnes des comptes d'épargne avec un solde disponible strictement inférieur à 600.
 
-Comptes ouverts en décembre 2004
+### 4 Comptes ouverts en décembre 2004
 Afficher toutes les colonnes des comptes ouverts entre le 1er décembre 2004 et le 30 décembre 2004.
 
-Employés du département 3
+### 5 Employés du département 3
 Afficher les prénoms et noms des employés du département 3, triés par ordre alphabétique selon le prénom.
 
-Comptes ouverts le 12 mars 2001
+### 6 Comptes ouverts le 12 mars 2001
 Afficher les numéros des employés ayant ouvert des comptes le 2001-03-12.
 
-Comptes-titres avec solde supérieur à 6000
+### 7 Comptes-titres avec solde supérieur à 6000
 Afficher les comptes-titres avec un solde disponible supérieur à 6000.
 
-Adresse du quartier général
+### 8 Adresse du quartier général
 Afficher l'adresse, le code postal et la ville du quartier général de l'entreprise.
 
-Postes des employés sans doublons
+### 9 Postes des employés sans doublons
 Afficher les différents noms de postes des employés, sans doublons.
 
-Nom de produit du compte 14
+### 10 Nom de produit du compte 14
 Afficher le nom de produit associé au compte 14.
 
-Directeurs avec nom de famille commençant par C
+### 11 Directeurs avec nom de famille commençant par C
 Afficher les noms et prénoms des directeurs ayant un nom de famille commençant par la lettre C.
 
-Comptes liés aux prêts pour petites entreprises
+### 12 Comptes liés aux prêts pour petites entreprises
 Afficher tous les comptes en lien avec des prêts pour les petites entreprises.
 
-Somme des soldes des comptes ouverts par Paula Roberts
+### 13 Somme des soldes des comptes ouverts par Paula Roberts
 Afficher la somme des soldes disponibles des comptes ouverts par l'employée Paula Roberts.
