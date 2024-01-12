@@ -266,6 +266,81 @@ Pour mettre à jour un client : Fonctionnalité non implémentée dans le script
 
 curl -X DELETE http://localhost/api/customer_manager.php \
 -H "Content-Type: application/json" \
+
+
+
+## Exemple de Retours pour Chaque Appel à l'API
+API de Gestion des Clients
+
+## Création d'un Client (POST)
+
+Réussite : "Nouveau client créé avec succès"
+Échec : "Erreur: [Détails de l'erreur]"
+
+## Lecture des Clients (GET)
+
+Réussite : "ID: 1 - Ville: Paris<br>ID: 2 - Ville: Lyon<br>" (et ainsi de suite pour chaque client)
+Échec : "0 résultat"
+
+## Mise à Jour d'un Client (PUT)
+Réponse Attendue :
+Réussite : 
+{
+  "status": "success",
+  "message": "Client mis à jour avec succès."
+}
+Échec : 
+{
+  "status": "error",
+  "message": "Mise à jour des clients non implémentée."
+}
+
+## Suppression d'un Client (DELETE)
+
+Réussite : "Client supprimé avec succès"
+Échec : "Erreur de suppression: [Détails de l'erreur]"
+API de Gestion des Employés
+
+## Création d'un Employé (POST)
+
+Réussite : "Nouvel employé créé avec succès"
+Échec : "Erreur: [Détails de l'erreur]"
+
+## Lecture des Employés (GET)
+
+Réussite : "ID: 1 - Nom: John Doe<br>ID: 2 - Nom: Jane Smith<br>" (et ainsi de suite pour chaque employé)
+Échec : "0 résultat"
+
+## Mise à Jour d'un Employé (PUT)
+
+Réussite : "Employé mis à jour avec succès"
+Échec : "Erreur de mise à jour: [Détails de l'erreur]"
+
+## Suppression d'un Employé (DELETE)
+
+Réussite : "Employé supprimé avec succès"
+Échec : "Erreur de suppression: [Détails de l'erreur]"
+API de Gestion des Produits
+
+## Création d'un Produit (POST)
+
+Réussite : "Nouveau produit créé avec succès"
+Échec : "Erreur: [Détails de l'erreur]"
+
+## Lecture des Produits (GET)
+
+Réussite : "Code du produit: PRD001 - Nom: Produit 1 - Type: Type1<br>Code du produit: PRD002 - Nom: Produit 2 - Type: Type2<br>" (et ainsi de suite pour chaque produit)
+Échec : "0 résultat"
+
+## Mise à Jour d'un Produit (PUT)
+
+Réussite : "Produit mis à jour avec succès"
+Échec : "Erreur de mise à jour: [Détails de l'erreur]"
+
+## Suppression d'un Produit (DELETE)
+
+Réussite : "Produit supprimé avec succès"
+Échec : "Erreur de suppression: [Détails de l'erreur]"
 -d '{"cust_id": 123}'
 curl -X DELETE http://localhost/api/employee_manager.php \
 -H "Content-Type: application/json" \
