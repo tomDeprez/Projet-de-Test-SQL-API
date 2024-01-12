@@ -268,8 +268,8 @@ curl -X DELETE http://localhost/api/customer_manager.php \
 -H "Content-Type: application/json" \
 
 
-
-## Exemple de Retours pour Chaque Appel à l'API
+*************************************************
+# Exemple de Retours pour Chaque Appel à l'API
 API de Gestion des Clients
 
 ## Création d'un Client (POST)
