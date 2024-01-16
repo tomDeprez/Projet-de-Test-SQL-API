@@ -2,29 +2,46 @@
 include 'db_connect.php';
 
 $method = $_SERVER['REQUEST_METHOD'];
+$input = json_decode(file_get_contents('php://input'), true);
 
 switch ($method) {
   case 'POST':
-    createProduct($conn);
+    createProduct($conn,$input);
     break;
   case 'GET':
     readProducts($conn);
     break;
   case 'PUT':
-    updateProduct($conn);
+    updateProduct($conn,$input);
     break;
   case 'DELETE':
-    deleteProduct($conn);
+    deleteProduct($conn,$input);
     break;
 }
 
-function createProduct($conn)
+// function GET readProducts() { ..OK.. } thay doi ten in ra Nom = Name
+function readProducts($conn)
 {
-  parse_str(file_get_contents("php://input"), $post_vars);
-  $product_cd = $post_vars['product_cd'];
-  $name = $post_vars['name'];
-  $product_type_cd = $post_vars['product_type_cd'];
-  $date_offered = $post_vars['date_offered'];
+  $sql = "SELECT * FROM product";
+  $result = $conn->query($sql);
+  if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+      // echo "Code du produit: " . $row["PRODUCT_CD"] . " - Nom: " . $row["NAME"] . " - Type: " . $row["PRODUCT_TYPE_CD"] . "<br>";
+      echo "Code du produit: " . $row["PRODUCT_CD"] . " - Name: " . $row["NAME"] . " - Type: " . $row["PRODUCT_TYPE_CD"] . "<br>";
+    }
+  } else {
+    echo "0 résultat";
+  }
+}
+
+// function POST createProduct() { ..OK.. }
+function createProduct($conn,$input)
+{
+  // parse_str(file_get_contents("php://input"), $post_vars);
+  $product_cd = $input['product_cd'];
+  $date_offered = $input['date_offered'];
+  $name = $input['name'];
+  $product_type_cd = $input['product_type_cd'];
 
   $sql = "INSERT INTO product (PRODUCT_CD, NAME, PRODUCT_TYPE_CD, DATE_OFFERED) VALUES ('$product_cd', '$name', '$product_type_cd', '$date_offered')";
   if ($conn->query($sql) === TRUE) {
@@ -34,26 +51,18 @@ function createProduct($conn)
   }
 }
 
-function readProducts($conn)
+// function PUT updateProduct() { ..OK.. }
+function updateProduct($conn,$input)
 {
-  $sql = "SELECT * FROM product";
-  $result = $conn->query($sql);
-  if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-      echo "Code du produit: " . $row["PRODUCT_CD"] . " - Nom: " . $row["NAME"] . " - Type: " . $row["PRODUCT_TYPE_CD"] . "<br>";
-    }
-  } else {
-    echo "0 résultat";
-  }
-}
+  // parse_str(file_get_contents("php://input"), $put_vars);
+  $product_cd = $input['product_cd'];
+  $name = $input['name'];
+  $date_offered = $input['date_offered'];
+  $product_type_cd = $input['product_type_cd'];
+   // bien "product_type_cd" la khoa chinh cua bang product_type; la duy nhat va la gia tri duoc dinh san, 
+  //  do do khi cap nhap gia tri trong bang "product" thi phai chon trong cac gia tri da duoc khai bao o bang "product_type"
 
-function updateProduct($conn)
-{
-  parse_str(file_get_contents("php://input"), $put_vars);
-  $product_cd = $put_vars['product_cd'];
-  $name = $put_vars['name'];
-
-  $sql = "UPDATE product SET NAME='$name' WHERE PRODUCT_CD='$product_cd'";
+  $sql = "UPDATE product SET NAME='$name', DATE_OFFERED='$date_offered',PRODUCT_TYPE_CD='$product_type_cd' WHERE PRODUCT_CD='$product_cd'";
   if ($conn->query($sql) === TRUE) {
     echo "Produit mis à jour avec succès";
   } else {
@@ -61,10 +70,11 @@ function updateProduct($conn)
   }
 }
 
-function deleteProduct($conn)
+// function DELETE deleteProduct() { ..OK.. }
+function deleteProduct($conn, $input)
 {
-  parse_str(file_get_contents("php://input"), $delete_vars);
-  $product_cd = $delete_vars['product_cd'];
+  // parse_str(file_get_contents("php://input"), $delete_vars);
+  $product_cd = $input['product_cd'];
 
   $sql = "DELETE FROM product WHERE PRODUCT_CD='$product_cd'";
   if ($conn->query($sql) === TRUE) {
