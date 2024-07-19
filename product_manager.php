@@ -112,6 +112,23 @@ function updateProduct($conn,$input)
 // function DELETE deleteProduct() { ..OK.. }
 function deleteProduct($conn, $input)
 {
+  $stmt = $conn->prepare("SELECT PRODUCT_CD FROM product WHERE PRODUCT_CD = ?");
+    if ($stmt === false) {
+        echo "Erreur de préparation de la requête: " . $conn->error;
+        return;
+    }
+
+    $stmt->bind_param("s", $product_cd);
+    $stmt->execute();
+    $stmt->store_result();
+
+    if ($stmt->num_rows === 0) {
+        echo "Erreur: Le produit avec le code $product_cd n'existe pas.";
+        $stmt->close();
+        return;
+    }
+
+    $stmt->close();
   // parse_str(file_get_contents("php://input"), $delete_vars);
   $product_cd = $input['product_cd'];
 
