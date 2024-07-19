@@ -112,6 +112,7 @@ function updateProduct($conn,$input)
 // function DELETE deleteProduct() { ..OK.. }
 function deleteProduct($conn, $input)
 {
+  $product_cd = $input['product_cd'];
   $stmt = $conn->prepare("SELECT PRODUCT_CD FROM product WHERE PRODUCT_CD = ?");
     if ($stmt === false) {
         echo "Erreur de préparation de la requête: " . $conn->error;
@@ -130,7 +131,6 @@ function deleteProduct($conn, $input)
 
     $stmt->close();
   // parse_str(file_get_contents("php://input"), $delete_vars);
-  $product_cd = $input['product_cd'];
 
   $sql = "DELETE FROM product WHERE PRODUCT_CD='$product_cd'";
   if ($conn->query($sql) === TRUE) {
